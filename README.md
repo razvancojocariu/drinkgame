@@ -1,11 +1,11 @@
-# 🍺 DrinkGame
+#  DrinkGame
 
 > A Romanian party drinking game for Android & iOS, built with .NET MAUI.  
 > Features 150+ challenges, a spin wheel, per-player statistics, and a chaotic good time.
 
 ---
 
-## 📱 Screenshots
+##  Screenshots
 
 | <img src="drinkgame/1.png" width="200" /> | <img src="drinkgame/2.png" width="200" /> | <img src="drinkgame/3.png" width="200" /> | <img src="drinkgame/4.png" width="200" /> |
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎡 Spin Wheel Categories
+##  Spin Wheel Categories
 
  <img src="drinkgame/gifu.gif" width="180" />
 
