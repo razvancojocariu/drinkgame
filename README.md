@@ -7,7 +7,7 @@
 
 ## 📱 Screenshots
 
-| <img src="drinkgame/1.jpg" width="200" /> | <img src="drinkgame/2.jpg" width="200" /> | <img src="drinkgame/3.jpg" width="200" /> | <img src="drinkgame/5.jpg" width="200" /> |
+| <img src="drinkgame/1.png" width="200" /> | <img src="drinkgame/2.png" width="200" /> | <img src="drinkgame/3.png" width="200" /> | <img src="drinkgame/4.png" width="200" /> |
 
 
 ## ✨ Features
