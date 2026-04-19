@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:drinkgame.Converters"
+             x:Class="drinkgame.Views.GamePage"
+             BackgroundColor="#1a1a2e"
+             Title="Drink Game">
+
+    <ContentPage.Resources>
+        <converters:InverseBoolConverter x:Key="InvertedBool" />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*" ColumnDefinitions="*" Padding="0">
+
+        <!-- Main game content -->
+        <Grid Grid.Row="0"
+              RowDefinitions="Auto,*,Auto,Auto"
+              Padding="20"
+              ColumnDefinitions="*">
+
+            <Label Grid.Row="0"
+                   Text="{Binding Round, StringFormat='Runda {0}'}"
+                   TextColor="White"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   Margin="0,40,0,10"/>
+
+            <!-- Challenge card -->
+            <Frame Grid.Row="1"
+                   BackgroundColor="#16213e"
+                   BorderColor="#e94560"
+                   CornerRadius="20"
+                   Padding="20"
+                   Margin="0,10"
+                   HasShadow="True"
+                   IsVisible="{Binding IsWheelVisible, Converter={StaticResource InvertedBool}}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center">
+                <Label Text="{Binding CurrentChallenge}"
+                       TextColor="White"
+                       FontSize="22"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       LineBreakMode="WordWrap"/>
+            </Frame>
+
+            <!-- Wheel -->
+            <Grid Grid.Row="1"
+                  IsVisible="{Binding IsWheelVisible}"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Center"
+                  RowDefinitions="Auto,Auto"
+                  ColumnDefinitions="*">
+                <Label Grid.Row="0"
+                       Text="&#9660;"
+                       FontSize="32"
+                       TextColor="#FFD700"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"
+                       Margin="0,0,0,-5"/>
+                <Image x:Name="TheWheel"
+                       Grid.Row="1"
+                       Source="wheelspin.png"
+                       WidthRequest="280"
+                       HeightRequest="280"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Aspect="AspectFit"/>
+            </Grid>
+
+            <!-- Buttons -->
+            <VerticalStackLayout Grid.Row="2"
+                                 Spacing="10"
+                                 Margin="0,15,0,10"
+                                 HorizontalOptions="Fill">
+                <Button Text="Urmatoarea Provocare 🍺"
+                        Command="{Binding NextChallengeCommand}"
+                        BackgroundColor="#e94560"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="12"
+                        Padding="15,10"
+                        IsVisible="{Binding IsGameFinished, Converter={StaticResource InvertedBool}}"
+                        HorizontalOptions="Fill"/>
+                <Button Text="Nu fac provocarea"
+                        Command="{Binding SkipChallengeCommand}"
+                        BackgroundColor="Transparent"
+                        BorderColor="#e94560"
+                        BorderWidth="2"
+                        TextColor="#e94560"
+                        FontSize="16"
+                        CornerRadius="12"
+                        Padding="15,10"
+                        IsVisible="{Binding IsGameFinished, Converter={StaticResource InvertedBool}}"
+                        HorizontalOptions="Fill"/>
+            </VerticalStackLayout>
+
+            <!-- Game over -->
+            <VerticalStackLayout Grid.Row="3"
+                                 Spacing="10"
+                                 HorizontalOptions="Fill">
+                <Label Text="Joc terminat!"
+                       IsVisible="{Binding IsGameFinished}"
+                       TextColor="Gold"
+                       FontSize="24"
+                       HorizontalOptions="Center"
+                       Margin="0,10,0,0"/>
+                <Button Text="Inapoi la Start"
+                        Command="{Binding GoToMainMenuCommand}"
+                        BackgroundColor="#0f3460"
+                        TextColor="White"
+                        CornerRadius="12"
+                        Padding="15,10"
+                        IsVisible="{Binding IsGameFinished}"
+                        HorizontalOptions="Fill"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Floating back button overlay -->
+        <Button Grid.Row="0"
+                Text="&#8592;"
+                Command="{Binding GoToMainMenuCommand}"
+                BackgroundColor="#AA000000"
+                TextColor="White"
+                FontSize="22"
+                CornerRadius="22"
+                WidthRequest="44"
+                HeightRequest="44"
+                Padding="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Margin="10,40,0,0"
+                ZIndex="100"
+                IsVisible="{Binding IsGameFinished, Converter={StaticResource InvertedBool}}"/>
+
+    </Grid>
+</ContentPage>

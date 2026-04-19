@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="drinkgame.Views.MainPage"
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False">
+
+    <AbsoluteLayout>
+
+        <!-- Background image — fills entire screen in both orientations -->
+        <Image Source="bereaa.png"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <!-- Dark overlay -->
+        <BoxView Color="Black"
+                 Opacity="0.35"
+                 AbsoluteLayout.LayoutFlags="All"
+                 AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+        <!-- ScrollView lets content adapt in landscape without clipping -->
+        <ScrollView AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    VerticalScrollBarVisibility="Never">
+
+            <VerticalStackLayout Spacing="24"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Fill"
+                                 Padding="32,40">
+
+                <Label x:Name="LogoLabel"
+                       Text="Ai grija de sufletul tau, JUPÂNE!"
+                       FontSize="36"
+                       FontAttributes="Bold"
+                       TextColor="#FF9800"
+                       FontFamily="Bangers"
+                       HorizontalOptions="Center">
+                    <Label.Shadow>
+                        <Shadow Brush="Black" Radius="5" Offset="2,2"/>
+                    </Label.Shadow>
+                </Label>
+
+                <Label Text="Poate o bere nu te omoară, dar prietenii da!"
+                       FontSize="18"
+                       TextColor="White"
+                       HorizontalOptions="Center"/>
+
+                <Button Text="Vreau să mă risc"
+                        Clicked="OnStartClicked"
+                        WidthRequest="220"
+                        HeightRequest="60"
+                        BackgroundColor="#2ECC71"
+                        TextColor="White"
+                        CornerRadius="30"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Margin="0,16,0,0">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Radius="5" Offset="2,2"/>
+                    </Button.Shadow>
+                </Button>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </AbsoluteLayout>
+
+</ContentPage>

@@ -1,0 +1,19 @@
+<Shell
+    x:Class="drinkgame.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:drinkgame.Views">
+
+    <ShellContent Route="MainPage"
+                  ContentTemplate="{DataTemplate views:MainPage}" />
+
+    <ShellContent Route="PlayerNamesPage"
+                  ContentTemplate="{DataTemplate views:PlayerNamesPage}" />
+
+    <ShellContent Route="GamePage"
+                  ContentTemplate="{DataTemplate views:GamePage}" />
+
+    <ShellContent Route="StatisticsPage"
+                  ContentTemplate="{DataTemplate views:StatisticsPage}" />
+
+</Shell>
