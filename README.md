@@ -1,4 +1,4 @@
-# 🍺 DrinkGame — Jocul de Băut
+# 🍺 DrinkGame
 
 > A Romanian party drinking game for Android & iOS, built with .NET MAUI.  
 > Features 150+ challenges, a spin wheel, per-player statistics, and a chaotic good time.
@@ -10,37 +10,30 @@
 | <img src="drinkgame/1.png" width="200" /> | <img src="drinkgame/2.png" width="200" /> | <img src="drinkgame/3.png" width="200" /> | <img src="drinkgame/4.png" width="200" /> |
 
 
-## ✨ Features
+## Features
 
-- 🎮 **150+ challenges** across 5 difficulty levels (1–5 ⭐)
-- 🎡 **Spin wheel** with 4 special categories (3% chance per round)
-- 👥 **Multi-player** — add any number of players before starting
-- 📊 **End-of-game statistics** — ranked leaderboard with special titles
-- ⏭️ **Skip button** — opt out of a challenge (tracked in stats)
-- 🔒 **Quit protection** — confirmation dialog prevents accidental exit
-- 🔊 **Wheel spin sound effect**
+-  **150+ challenges** across 5 difficulty levels (1–5 )
+-  **Spin wheel** with 4 special categories (3% chance per round)
+-  **Multi-player** — add any number of players before starting
+-  **End-of-game statistics** — ranked leaderboard with special titles
+-  **Skip button** — opt out of a challenge (tracked in stats)
+-  **Quit protection** — confirmation dialog prevents accidental exit
+-  **Wheel spin sound effect**
 
 ---
 
 ## 🎡 Spin Wheel Categories
 
-- | Segment | Color | Challenge Pool |
-- | **KINKY** | 🟣 Purple (top) | Adult / daring challenges |
-- | **PROVOCARE DE GRUP** | 🔵 Blue (left) | Everyone participates |
-- | **REGULA NOUĂ** | 🟢 Green (bottom) | New rule for several rounds |
-- | **IMUNITATE** | 🔴 Red (right) | Player gets immunity |
-
  <img src="drinkgame/gifu.gif" width="180" />
-
 
 ---
 
-## 🏆 End-of-Game Awards
+##  End-of-Game Awards
 
 | Award | Description |
-|---|---|
-| 🍺 **Betivul Serii, cumetre!** | Most challenges completed |
-| 😴 **Fatălăul Serii!** | Most challenges skipped |
+-
+| Most challenges completed |
+| Most challenges skipped |
 
 ---
 
@@ -59,7 +52,7 @@
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -81,7 +74,7 @@ All NuGet packages restore automatically on first build.
 
 ---
 
-## 📦 NuGet Dependencies
+##  NuGet Dependencies
 
 ```xml
 <PackageReference Include="CommunityToolkit.Maui"              Version="14.1.0" />
@@ -93,7 +86,7 @@ All NuGet packages restore automatically on first build.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 drinkgame/
@@ -127,29 +120,27 @@ drinkgame/
 
 ---
 
-## 🎮 How to Play
+##  How to Play
 
 1. Open the app → tap **"Vreau să mă risc"**
 2. Enter all player names → tap **"Începe jocul"**
 3. Each round a random player gets a challenge
-   - **"Următoarea Provocare"** → completed ✅ (counts toward stats)
-   - **"Nu fac provocarea"** → skipped ❌ (counts toward stats)
-4. Occasionally (3% chance) the 🎡 **spin wheel** appears for a special category
-5. After **30 rounds**, see who is the **Betivul Serii** 🍺 and who chickened out 😴
+   - **"Următoarea Provocare"** → completed  (counts toward stats)
+   - **"Nu fac provocarea"** → skipped  (counts toward stats)
+4. Occasionally (3% chance) the  **spin wheel** appears for a special category
+5. After **30 rounds**, see who is the **Betivul Serii**  and who chickened out 
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 This app is intended for **adults (18+)**. Please drink responsibly.  
 Never drink and drive. The developers are not responsible for regrettable texts, lost bets, or existential crises caused by spin wheel results.
 
 ---
 
-## 📄 License
+##  License
 
-MIT — fork it, mod it, use it for your own party nights. 🎉
+MIT — fork it, mod it, use it for your own party nights. 
 
 ---
-
-*Built with ❤️, C#, and probably too many shots of testing.*
