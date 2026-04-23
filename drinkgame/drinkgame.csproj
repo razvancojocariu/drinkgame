@@ -55,13 +55,15 @@
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
-		<!-- SVG excluded — SVG in MauiImage wildcard corrupts Android drawable compilation -->
-		<MauiImage Include="Resources\Images\*" Exclude="Resources\Images\*.svg" />
-		<!-- BaseSize="360,780" = standard Android phone logical size (mdpi portrait).
-		     Generated densities: mdpi=360x780, hdpi=540x1170, xhdpi=720x1560,
-		     xxhdpi=1080x2340, xxxhdpi=1440x3120. Covers all modern phones. -->
-		<MauiImage Update="Resources\Images\bereaa.png"        Resize="True" BaseSize="360,780" />
-		<MauiImage Update="Resources\Images\raccoon_party.png" Resize="True" BaseSize="360,780" />
+		<!-- Background PNGs excluded from Resizetizer — loaded at runtime via
+		     FileSystem.OpenAppPackageFileAsync to bypass silent Resizetizer failures
+		     (caused by ICC profiles / AI-generated PNG metadata). -->
+		<MauiImage Include="Resources\Images\*" Exclude="Resources\Images\*.svg;Resources\Images\bereaa.png;Resources\Images\raccoon_party.png" />
+
+		<!-- Background images as raw assets — packed as-is, no compilation.
+		     Accessible on ALL platforms via FileSystem.OpenAppPackageFileAsync("filename"). -->
+		<MauiAsset Include="Resources\Images\bereaa.png" LogicalName="bereaa.png" />
+		<MauiAsset Include="Resources\Images\raccoon_party.png" LogicalName="raccoon_party.png" />
 		
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />

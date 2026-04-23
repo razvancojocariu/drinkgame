@@ -7,8 +7,9 @@
 
     <AbsoluteLayout>
 
-        <!-- Background image — fills entire screen in both orientations -->
-        <Image Source="bereaa.png"
+        <!-- Background image — Source set at runtime via FileSystem.OpenAppPackageFileAsync
+             to bypass Resizetizer, which silently fails on certain PNG formats on Android. -->
+        <Image x:Name="BgImage"
                Aspect="AspectFill"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="0,0,1,1" />
@@ -19,7 +20,7 @@
                  AbsoluteLayout.LayoutFlags="All"
                  AbsoluteLayout.LayoutBounds="0,0,1,1" />
 
-        <!-- ScrollView lets content adapt in landscape without clipping -->
+        <!-- ScrollView allows content to adapt in both portrait and landscape -->
         <ScrollView AbsoluteLayout.LayoutFlags="All"
                     AbsoluteLayout.LayoutBounds="0,0,1,1"
                     VerticalScrollBarVisibility="Never">
