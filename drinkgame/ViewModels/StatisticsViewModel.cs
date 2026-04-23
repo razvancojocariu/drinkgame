@@ -67,7 +67,7 @@ public partial class StatisticsViewModel : ObservableObject
                 else if (player.ChallengesSkipped == maxSkipped && maxSkipped > 0)
                 {
                     stat.HasBadge = true;
-                    stat.Badge = "😴 Fatălăul Serii!";
+                    stat.Badge = "😴";
                     stat.BadgeColor = "#FF6B6B";
                 }
 
