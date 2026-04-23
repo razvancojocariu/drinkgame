@@ -12,7 +12,6 @@
 
     <Grid RowDefinitions="*" ColumnDefinitions="*" Padding="0">
 
-        <!-- Main game content -->
         <Grid Grid.Row="0"
               RowDefinitions="Auto,*,Auto,Auto"
               Padding="20"
@@ -25,7 +24,6 @@
                    HorizontalOptions="Center"
                    Margin="0,40,0,10"/>
 
-            <!-- Challenge card -->
             <Frame Grid.Row="1"
                    BackgroundColor="#16213e"
                    BorderColor="#e94560"
@@ -44,7 +42,6 @@
                        LineBreakMode="WordWrap"/>
             </Frame>
 
-            <!-- Wheel -->
             <Grid Grid.Row="1"
                   IsVisible="{Binding IsWheelVisible}"
                   VerticalOptions="Center"
@@ -68,7 +65,6 @@
                        Aspect="AspectFit"/>
             </Grid>
 
-            <!-- Buttons -->
             <VerticalStackLayout Grid.Row="2"
                                  Spacing="10"
                                  Margin="0,15,0,10"
@@ -95,7 +91,6 @@
                         HorizontalOptions="Fill"/>
             </VerticalStackLayout>
 
-            <!-- Game over -->
             <VerticalStackLayout Grid.Row="3"
                                  Spacing="10"
                                  HorizontalOptions="Fill">
@@ -116,7 +111,6 @@
             </VerticalStackLayout>
         </Grid>
 
-        <!-- Floating back button overlay -->
         <Button Grid.Row="0"
                 Text="&#8592;"
                 Command="{Binding GoToMainMenuCommand}"

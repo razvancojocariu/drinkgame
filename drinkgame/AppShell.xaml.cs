@@ -1,4 +1,4 @@
-﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls;
 using drinkgame.Views;
 
 namespace drinkgame
@@ -11,4 +11,3 @@ namespace drinkgame
         }
     }
 }
-

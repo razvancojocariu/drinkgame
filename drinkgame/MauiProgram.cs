@@ -21,7 +21,8 @@ namespace drinkgame
                     fonts.AddFont("Bangers-Regular.ttf", "Bangers");
                 });
 
-            builder.Services.AddSingleton(AudioManager.Current);
+            builder.Services.AddSingleton<IAudioManager>(AudioManager.Current);
+            builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<PlayerNamesViewModel>();
             builder.Services.AddTransient<PlayerNamesPage>();
             builder.Services.AddTransient<GameViewModel>();

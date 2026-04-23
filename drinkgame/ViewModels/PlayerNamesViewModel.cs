@@ -19,10 +19,7 @@ public partial class PlayerNamesViewModel : ObservableObject
 
     public PlayerNamesViewModel()
     {
-        // Initialize the collection
         playerNames = new ObservableCollection<PlayerNameInput>();
-        
-        // Start with 2 default player name slots
         PlayerNames.Add(new PlayerNameInput());
         PlayerNames.Add(new PlayerNameInput());
     }
@@ -45,31 +42,28 @@ public partial class PlayerNamesViewModel : ObservableObject
     [RelayCommand]
     public async Task StartGame()
     {
-        // Filter out empty names
         var validPlayers = PlayerNames
             .Where(p => !string.IsNullOrWhiteSpace(p.Name))
-            .Select(p => p.Name)
+            .Select(p => p.Name.Trim())
             .ToList();
 
         if (validPlayers.Count < 2)
         {
             await Application.Current.MainPage.DisplayAlert(
-                "Validare", 
-                "Te rog introdu cel puțin 2 nume de jucători", 
+                "Validare",
+                "Te rog introdu cel puțin 2 nume de jucători",
                 "OK");
             return;
         }
 
         try
         {
-            // Navigate to GamePage with player names using absolute routing
-            string playerNamesString = string.Join(",", validPlayers);
+            string playerNamesString = string.Join(",", validPlayers.Select(Uri.EscapeDataString));
             await Shell.Current.GoToAsync($"///GamePage?players={playerNamesString}");
         }
         catch (Exception ex)
         {
-            // Display an error message if navigation fails
-            await Application.Current.MainPage.DisplayAlert("Navigation Error", ex.ToString(), "OK");
+            await Application.Current.MainPage.DisplayAlert("Eroare navigare", ex.ToString(), "OK");
         }
     }
 }

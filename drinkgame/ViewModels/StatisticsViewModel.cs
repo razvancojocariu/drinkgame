@@ -29,17 +29,11 @@ public partial class StatisticsViewModel : ObservableObject
     {
         try
         {
-
-            // Deserialize the JSON
             var players = JsonSerializer.Deserialize<List<Player>>(playersJson);
 
             if (players == null || players.Count == 0)
-            {
                 return;
-            }
 
-
-            // Create ranked list with badges
             var ranked = players
                 .OrderByDescending(p => p.ChallengesCompleted)
                 .ThenBy(p => p.ChallengesSkipped)
@@ -47,9 +41,7 @@ public partial class StatisticsViewModel : ObservableObject
 
             RankedPlayers.Clear();
 
-            // Find the player with most completed challenges (Betivul)
             int maxCompleted = ranked.FirstOrDefault()?.ChallengesCompleted ?? 0;
-            // Find the player with most skipped challenges (Fatălăul)
             int maxSkipped = players.Max(p => p.ChallengesSkipped);
 
             for (int i = 0; i < ranked.Count; i++)
@@ -66,7 +58,6 @@ public partial class StatisticsViewModel : ObservableObject
                     BadgeColor = "White"
                 };
 
-                // Assign badges
                 if (player.ChallengesCompleted == maxCompleted && maxCompleted > 0)
                 {
                     stat.HasBadge = true;
@@ -81,12 +72,11 @@ public partial class StatisticsViewModel : ObservableObject
                 }
 
                 RankedPlayers.Add(stat);
-
             }
-
         }
         catch (Exception ex)
         {
+            System.Diagnostics.Debug.WriteLine($"StatisticsViewModel.LoadPlayers error: {ex.Message}");
         }
     }
 }

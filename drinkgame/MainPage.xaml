@@ -7,9 +7,8 @@
 
     <AbsoluteLayout>
 
-        <!-- Background image — Source set at runtime via FileSystem.OpenAppPackageFileAsync
-             to bypass Resizetizer, which silently fails on certain PNG formats on Android. -->
-        <Image x:Name="BgImage"
+        <!-- Background image — fills entire screen in both orientations -->
+        <Image Source="bereaa.png"
                Aspect="AspectFill"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="0,0,1,1" />
@@ -20,7 +19,7 @@
                  AbsoluteLayout.LayoutFlags="All"
                  AbsoluteLayout.LayoutBounds="0,0,1,1" />
 
-        <!-- ScrollView allows content to adapt in both portrait and landscape -->
+        <!-- ScrollView lets content adapt in landscape without clipping -->
         <ScrollView AbsoluteLayout.LayoutFlags="All"
                     AbsoluteLayout.LayoutBounds="0,0,1,1"
                     VerticalScrollBarVisibility="Never">
@@ -31,10 +30,10 @@
                                  Padding="32,40">
 
                 <Label x:Name="LogoLabel"
-                       Text="Ai grija de sufletul tau, JUPÂNE!"
+                       Text="Esti pregatit?"
                        FontSize="36"
                        FontAttributes="Bold"
-                       TextColor="#FF9800"
+                       TextColor="White"
                        FontFamily="Bangers"
                        HorizontalOptions="Center">
                     <Label.Shadow>
@@ -42,12 +41,13 @@
                     </Label.Shadow>
                 </Label>
 
-                <Label Text="Poate o bere nu te omoară, dar prietenii da!"
+                <Label Text="Regulile sunt simple:
+bei, râzi… și regreți mâine."
                        FontSize="18"
                        TextColor="White"
                        HorizontalOptions="Center"/>
 
-                <Button Text="Vreau să mă risc"
+                <Button Text="Vreau să risc"
                         Clicked="OnStartClicked"
                         WidthRequest="220"
                         HeightRequest="60"

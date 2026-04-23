@@ -33,12 +33,11 @@ public partial class StatisticsPage : ContentPage
         {
             try
             {
-
-                viewModel.LoadPlayers(_playersJson);
-
+                viewModel.LoadPlayers(Uri.UnescapeDataString(_playersJson));
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine($"StatisticsPage.OnPlayersJsonSet error: {ex.Message}");
             }
         }
     }

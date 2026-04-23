@@ -8,8 +8,8 @@
 
     <AbsoluteLayout>
 
-        <!-- Background image — Source set at runtime, same fix as MainPage -->
-        <Image x:Name="BgImage"
+        <!-- Background image -->
+        <Image Source="raccoon_party.png"
                Aspect="AspectFill"
                Opacity="0.7"
                AbsoluteLayout.LayoutFlags="All"
@@ -21,15 +21,13 @@
                  AbsoluteLayout.LayoutFlags="All"
                  AbsoluteLayout.LayoutBounds="0,0,1,1" />
 
-        <!-- Content: fixed header + scrollable player list + footer buttons -->
         <Grid Padding="20,16"
               RowDefinitions="Auto,*,Auto"
               AbsoluteLayout.LayoutFlags="All"
               AbsoluteLayout.LayoutBounds="0,0,1,1">
 
-            <!-- Header -->
             <Label Grid.Row="0"
-                   Text="Lista victimelor de diseară"
+                   Text="Lista victimelor din aceasta seara"
                    FontSize="28"
                    TextColor="#FFFFFF"
                    FontAttributes="Bold"
@@ -40,7 +38,6 @@
                 </Label.Shadow>
             </Label>
 
-            <!-- Player Names — CollectionView scrolls in the Star row -->
             <CollectionView Grid.Row="1"
                             ItemsSource="{Binding PlayerNames}"
                             SelectionMode="None"
@@ -83,7 +80,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <!-- Buttons -->
             <VerticalStackLayout Grid.Row="2" Spacing="12">
                 <Button Text="+ Adaugă jucător"
                         Command="{Binding AddPlayerCommand}"

@@ -3,6 +3,7 @@ using drinkgame.Models;
 using Microsoft.Maui.Controls;
 using Plugin.Maui.Audio;
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -58,7 +59,7 @@ public partial class GamePage : ContentPage
 
             var playerList = _playersString
                 .Split(',')
-                .Select(n => n.Trim())
+                .Select(n => Uri.UnescapeDataString(n.Trim()))
                 .Where(n => !string.IsNullOrEmpty(n))
                 .Select(n => new Player { Name = n })
                 .ToList();
@@ -106,8 +107,13 @@ public partial class GamePage : ContentPage
         try
         {
             StopWheelSound();
-            var stream = await FileSystem.OpenAppPackageFileAsync("wheel_spin.mp3");
-            _wheelPlayer = _audioManager.CreatePlayer(stream);
+
+            using var assetStream = await FileSystem.OpenAppPackageFileAsync("wheel_spin.mp3");
+            var memoryStream = new MemoryStream();
+            await assetStream.CopyToAsync(memoryStream);
+            memoryStream.Position = 0;
+
+            _wheelPlayer = _audioManager.CreatePlayer(memoryStream);
             _wheelPlayer.Play();
         }
         catch (Exception ex)
