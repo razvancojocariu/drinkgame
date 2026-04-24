@@ -12,7 +12,7 @@
 
 ##  Screenshots
 
-| <img src="drinkgame/1.png" width="160" /> | <img src="drinkgame/2.png" width="160" /> | <img src="drinkgame/3.png" width="160" /> | <img src="drinkgame/4.png" width="160" /> |
+| <img src="drinkgame/1.png" width="120" /> | <img src="drinkgame/2.png" width="120" /> | <img src="drinkgame/3.png" width="120" /> | <img src="drinkgame/4.png" width="120" /> |
 
 
 ## Features
