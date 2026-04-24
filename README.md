@@ -1,4 +1,4 @@
-<a href="[YOUR_GOOGLE_DRIVE_LINK_HERE](https://drive.google.com/file/d/1p1RFoQaLcoOEt_XT2MxQj61ziC8pflHU/view)">
+<a href="(https://drive.google.com/file/d/1p1RFoQaLcoOEt_XT2MxQj61ziC8pflHU/view)">
   <img src="https://img.shields.io/badge/Download-APK-brightgreen.svg" width="300" />
 </a>
 
