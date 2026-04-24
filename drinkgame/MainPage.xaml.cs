@@ -10,17 +10,10 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
-    protected override async void OnAppearing()
+    protected override void OnAppearing()
     {
         base.OnAppearing();
-
-        LogoLabel.Scale = 0.5;
-        LogoLabel.Opacity = 0;
-
-        await Task.WhenAll(
-            LogoLabel.FadeTo(1, 800),
-            LogoLabel.ScaleTo(1, 800, Easing.CubicOut)
-        );
+        // Animation disabled for debugging black screen
     }
 
     private async void OnStartClicked(object sender, EventArgs e)

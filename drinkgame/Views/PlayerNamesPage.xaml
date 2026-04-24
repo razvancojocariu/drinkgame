@@ -6,28 +6,16 @@
              BackgroundColor="Black"
              Shell.NavBarIsVisible="False">
 
-    <AbsoluteLayout>
-
+    <Grid>
         <!-- Background image -->
-        <Image Source="raccoon_party.png"
+        <Image Source="raccoon_party"
                Aspect="AspectFill"
-               Opacity="0.7"
-               AbsoluteLayout.LayoutFlags="All"
-               AbsoluteLayout.LayoutBounds="0,0,1,1" />
-
-        <!-- Dark overlay -->
-        <BoxView Color="Black"
-                 Opacity="0.7"
-                 AbsoluteLayout.LayoutFlags="All"
-                 AbsoluteLayout.LayoutBounds="0,0,1,1" />
+               Opacity="0.5" />
 
         <Grid Padding="20,16"
-              RowDefinitions="Auto,*,Auto"
-              AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="0,0,1,1">
-
+              RowDefinitions="Auto,*,Auto">
             <Label Grid.Row="0"
-                   Text="Lista victimelor din aceasta seara"
+                   Text="Lista victimelor"
                    FontSize="28"
                    TextColor="#FFFFFF"
                    FontAttributes="Bold"
@@ -56,7 +44,7 @@
                             <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
                                 <Entry Grid.Column="0"
                                        Text="{Binding Name, Mode=TwoWay}"
-                                       Placeholder="Numele tău (sau pseudonimul de băutor)"
+                                       Placeholder="Numele tău (sau porecla)"
                                        PlaceholderColor="#99FFFFFF"
                                        TextColor="White"
                                        FontSize="18"
@@ -109,8 +97,7 @@
                     </Button.Background>
                 </Button>
             </VerticalStackLayout>
-
         </Grid>
-    </AbsoluteLayout>
+    </Grid>
 
 </ContentPage>

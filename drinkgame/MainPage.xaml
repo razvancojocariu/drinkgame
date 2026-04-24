@@ -5,37 +5,26 @@
              BackgroundColor="#121212"
              Shell.NavBarIsVisible="False">
 
-    <AbsoluteLayout>
-
-        <!-- Background image — fills entire screen in both orientations -->
-        <Image Source="bereaa.png"
+    <Grid IgnoreSafeArea="True">
+        <!-- Background image - using opacity directly to avoid Android overlay bugs -->
+        <Image Source="bereaa"
                Aspect="AspectFill"
-               AbsoluteLayout.LayoutFlags="All"
-               AbsoluteLayout.LayoutBounds="0,0,1,1" />
+               Opacity="0.6" />
 
-        <!-- Dark overlay -->
-        <BoxView Color="Black"
-                 Opacity="0.35"
-                 AbsoluteLayout.LayoutFlags="All"
-                 AbsoluteLayout.LayoutBounds="0,0,1,1" />
-
-        <!-- ScrollView lets content adapt in landscape without clipping -->
-        <ScrollView AbsoluteLayout.LayoutFlags="All"
-                    AbsoluteLayout.LayoutBounds="0,0,1,1"
-                    VerticalScrollBarVisibility="Never">
-
+        <!-- Content -->
+        <ScrollView VerticalScrollBarVisibility="Never">
             <VerticalStackLayout Spacing="24"
                                  VerticalOptions="Center"
                                  HorizontalOptions="Fill"
                                  Padding="32,40">
-
                 <Label x:Name="LogoLabel"
                        Text="Esti pregatit?"
                        FontSize="36"
                        FontAttributes="Bold"
                        TextColor="White"
                        FontFamily="Bangers"
-                       HorizontalOptions="Center">
+                       HorizontalOptions="Center"
+                       Opacity="1">
                     <Label.Shadow>
                         <Shadow Brush="Black" Radius="5" Offset="2,2"/>
                     </Label.Shadow>
@@ -62,10 +51,8 @@ bei, râzi… și regreți mâine."
                         <Shadow Brush="Black" Radius="5" Offset="2,2"/>
                     </Button.Shadow>
                 </Button>
-
             </VerticalStackLayout>
         </ScrollView>
-
-    </AbsoluteLayout>
+    </Grid>
 
 </ContentPage>
