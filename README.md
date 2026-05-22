@@ -133,7 +133,7 @@ drinkgame/
    - **"Următoarea Provocare"** → completed  (counts toward stats)
    - **"Nu fac provocarea"** → skipped  (counts toward stats)
 4. Occasionally (3% chance) the  **spin wheel** appears for a special category
-5. After **30 rounds**, see who is the **Betivul Serii**  and who chickened out 
+5. After **30 rounds**, see who is the **Betivul Serii** 
 
 ---
 
