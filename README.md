@@ -69,7 +69,7 @@
 ### Run locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/drinkgame.git
+git clone https://github.com/razvancojocariu/drinkgame.git
 cd drinkgame
 ```
 
